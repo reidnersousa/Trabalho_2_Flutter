@@ -8,25 +8,22 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   TextEditingController _carroController = TextEditingController();
 
-  TextEditingController _anoCoontroller = TextEditingController();
-  TextEditingController _corController = TextEditingController();
   TextEditingController _anoController = TextEditingController();
 
   void _inserir() {
     setState(() {
       carros.insert(0, _carroController.text);
+
       corControoller.insert(
           0,
-          int.tryParse(_anoCoontroller.text) != null
-              ? int.parse(_anoCoontroller.text)
+          int.tryParse(_anoController.text) != null
+              ? int.parse(_anoController.text)
               : 0);
     });
   }
 
   _limparFormulario() {
     _carroController.text = "";
-    _anoCoontroller.text = "";
-    _corController.text = "";
   }
 
   final List<String> carros = <String>["FJK-39M", "BFK-39U", "SFK-20U"];
@@ -58,28 +55,6 @@ class _HomeState extends State<Home> {
               decoration: InputDecoration(
                 border: OutlineInputBorder(),
                 labelText: 'Placa',
-              ),
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.all(20),
-            child: TextField(
-              keyboardType: TextInputType.number,
-              controller: _anoCoontroller,
-              decoration: InputDecoration(
-                border: OutlineInputBorder(),
-                labelText: 'quilômetro Rodado',
-              ),
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.all(20),
-            child: TextField(
-              keyboardType: TextInputType.name,
-              controller: _corController,
-              decoration: InputDecoration(
-                border: OutlineInputBorder(),
-                labelText: 'Cor do veiculo',
               ),
             ),
           ),
