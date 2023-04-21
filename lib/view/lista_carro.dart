@@ -91,6 +91,7 @@ class _HomeState extends State<Home> {
               primary: Theme.of(context).primaryColor,
             ),
           ),
+          SizedBox(height: 10),
           ElevatedButton(
             onPressed: _limparFormulario,
             child: Text("Limpar"),
