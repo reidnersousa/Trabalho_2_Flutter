@@ -26,10 +26,12 @@ class _HomeState extends State<Home> {
 
   _limparFormulario() {
     _carroController.text = "";
+    _anoController.text = "";
+    _corController.text = "";
   }
 
   final List<String> carros = <String>["FJK-39M", "BFK-39U", "SFK-20U"];
-  final List<String> corController = ['40', '30', '20'];
+  final List<String> corController = ['Vermelho', 'Azul', 'Branco'];
 
   List<int> anoController = [2023, 2000, 2019];
 
