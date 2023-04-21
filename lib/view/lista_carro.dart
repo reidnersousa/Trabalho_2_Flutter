@@ -14,13 +14,13 @@ class _HomeState extends State<Home> {
   void _inserir() {
     setState(() {
       carros.insert(0, _carroController.text);
-      anoController.insert(0, _anoController.text);
-
-      corController.insert(
+      anoController.insert(
           0,
-          int.tryParse(_corController.text) != null
-              ? int.parse(_corController.text)
+          int.tryParse(_anoController.text) != null
+              ? int.parse(_anoController.text)
               : 0);
+
+      corController.insert(0, _corController.text);
     });
   }
 
@@ -29,9 +29,9 @@ class _HomeState extends State<Home> {
   }
 
   final List<String> carros = <String>["FJK-39M", "BFK-39U", "SFK-20U"];
-  final List<int> corController = [40, 30, 20];
+  final List<String> corController = ['40', '30', '20'];
 
-  List<String> anoController = ['2023', '2022', '2019'];
+  List<int> anoController = [2023, 2000, 2019];
 
   @override
   Widget build(BuildContext context) {
@@ -104,9 +104,9 @@ class _HomeState extends State<Home> {
                 return Container(
                   height: 50,
                   margin: EdgeInsets.all(2.0),
-                  color: corController[index] >= 2019
+                  color: anoController[index] >= 2010
                       ? Colors.blue[400]
-                      : corController[index] >= 2020
+                      : anoController[index] >= 2020
                           ? Colors.blue[100]
                           : Colors.grey,
                   child: Center(
